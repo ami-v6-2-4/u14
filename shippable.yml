@@ -8,7 +8,17 @@ build:
     pull: true
     
   ci:   
-    - echo "base image"
+    - python -V
+    - pip --version
+    - aws --version
+    - eb --version
+    - gcloud version
+    - jfrog --version
+    - kubectl version
+    - packer version
+    - terraform --version
+    - apt search azure-cli
+    - az --version
     - EXPECTED_DOCKER_VERSION="17.06.0-ce"
     - |
       [ $(docker version --format {{.Server.Version}}) == "$EXPECTED_DOCKER_VERSION" ]
